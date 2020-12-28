@@ -1,0 +1,46 @@
+
+#HTTP Server Port
+server:
+  port: 8081
+
+#Defining Context Path for the Application
+  servlet:
+    context-path: /corona
+
+
+
+###
+#DATASOURCE SETTINGS
+###
+spring:
+  application:
+    name: coronavirustracker
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jwt_token_demo
+    username: postgres
+    password: password
+    initialization-mode: always
+    initialize: true
+#spring.datasource.schema=classpath:/schema.sql
+    continue-on-error: true
+
+
+###
+#JPA SETTINGS
+###
+  jpa:
+    hibernate:
+          dialect : org.hibernate.dialect.PostgreSQL95Dialect
+          ddl-auto: update
+          show-sql: true
+          format_sql: true
+          naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+###
+#LDAP EMBEDDED SERVER
+###
+#spring.ldap.embedded.port=8389
+#spring.ldap.embedded.ldif=classpath:ldap-data.ldif
+#spring.ldap.embedded.base-dn=dc=springframework,dc=org
+#spring.ldap.username=uid=admin,ou=system
+#spring.ldap.password=secret
