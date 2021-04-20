@@ -74,10 +74,13 @@ public class CoronaDataService {
         //iterating all the records
         for(CSVRecord record: records){
             CoronaDataDto coronaDataModel= new CoronaDataDto();
+            String totalrec= record.get("1/28/21").toString();
+
+            Integer data= Integer.parseInt(totalrec);
 
             //Get the data of total cases in a country
-            if(record.get("Province/State").equalsIgnoreCase("")) {
-                coronaDataModel.setCountry(record.get("Country/Region"));
+            if(record.get("Province/State").equalsIgnoreCase("") && data>1000000) {
+                coronaDataModel.setCountry(record.get("Country/Region") );
 
 
                 //coronaDataModel.setState(record.get("Province/State"));

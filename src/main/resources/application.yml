@@ -1,7 +1,11 @@
+#logging
+logging.level.org.springframework = debug
+
 
 #HTTP Server Port
 server:
-  port: 8081
+  `port: 5000
+
 
 #Defining Context Path for the Application
   servlet:

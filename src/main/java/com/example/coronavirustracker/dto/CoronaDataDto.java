@@ -1,12 +1,18 @@
 package com.example.coronavirustracker.dto;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.context.annotation.Configuration;
 
+@ApiModel(description = "Details about the Total cases and new cases registered for each country")
 @Configuration
 public class CoronaDataDto {
     //private String State;
+    @ApiModelProperty(notes = "Name of the country")
     private String Country;
+    @ApiModelProperty(notes = "Total number of cases")
     private int latestTotalCases;
+    @ApiModelProperty(notes = "Number of newly registered cases")
     private int differenceFromYesterday;
 
     public CoronaDataDto() {
